@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" >
+    <head>
+        <meta charset="utf-8" />
+        <title>HTML5 charts and graphs - using Flotr2 demo</title>
+        <link href="css/main.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" src="js/flotr2.min.js" ></script>
+		<script src="../jquery-3.2.1.min.js"></script>
+        <!--[if lt IE 9]>
+        <script type="text/javascript" src="js/flashcanvas.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <div id="container" class="container"></div>
+        <div class="controls">
+            <h3>Function:</h3>
+            <p>
+                <input type="radio" name="func" value="1" onclick="toggleFunc(1)" checked> sin
+                <input type="radio" name="func" value="2" onclick="toggleFunc(2)"> sin(1/x)
+            </p>
+            <h3>Visual mode:</h3>
+            <p>
+                <input type="radio" name="mode" value="1" onclick="toggleMode(1)" checked> #1
+                <input type="radio" name="mode" value="2" onclick="toggleMode(2)"> #2
+                <input type="radio" name="mode" value="3" onclick="toggleMode(3)"> #3
+                <input type="radio" name="mode" value="4" onclick="toggleMode(4)"> #4
+                	
+            </p>
+        </div>
+        <script type="text/javascript" src="js/script.js" ></script>
+    </body>
+</html>

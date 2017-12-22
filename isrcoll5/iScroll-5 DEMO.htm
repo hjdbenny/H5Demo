@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+
+		<title>iScroll-5 DEMO: Pull to Refresh + Infinite Next Page load</title>
+
+		<script type="text/javascript" src="iScroll-5%20DEMO_files/jquery-1.js"></script>
+		<script type="text/javascript" src="iScroll-5%20DEMO_files/iscroll-probe.js"></script>
+
+		<script type="text/javascript">
+			var items_per_page = 10;
+			var scroll_in_progress = false;
+			var myScroll;
+
+			load_content = function() {
+
+				trigger_myScroll();
+
+			};
+
+			function trigger_myScroll() {
+
+				
+
+			}
+
+			function loaded() {
+
+				myScroll = new IScroll('#wrapper');
+
+			}
+
+//			document.addEventListener('touchmove', function(e) {
+//				e.preventDefault();
+//			}, false);
+		</script>
+
+		<style type="text/css">
+			#wrapper {
+				position: absolute;
+				z-index: 1;
+				top: 45px;
+				bottom: 48px;
+				left: 9999px;
+				/* Not a must - can be 0 - but it makes the appearance of the content a bit nicer */
+				width: 100%;
+				background: #ccc;
+				overflow: hidden;
+			}
+		</style>
+	</head>
+
+	<body onload="loaded()">
+
+		<div id="wrapper" style="left: 0px;">
+
+			<ul>
+				<li>Pretty row initial content</li>
+				<li>Pretty row initial content</li>
+				<li>Pretty row initial content</li>
+				<li>Pretty row initial content</li>
+				<li>Pretty row initial content</li>
+				<li>Pretty row initial content</li>
+				<li>Pretty row initial content</li>
+				<li>Pretty row initial content</li>
+				<li>Pretty row initial content</li>
+				<li>Pretty row initial content</li>
+				<li>Pretty row X</li>
+				<li>Pretty row X</li>
+				<li>Pretty row X</li>
+				<li>Pretty row X</li>
+				<li>Pretty row X</li>
+				<li>Pretty row X</li>
+				<li>Pretty row X</li>
+				<li>Pretty row X</li>
+				<li>Pretty row X</li>
+				<li>Pretty row X</li>
+				<li>Pretty row X</li>
+				<li>Pretty row X</li>
+				<li>Pretty row X</li>
+				<li>Pretty row X</li>
+				<li>Pretty row X</li>
+				<li>Pretty row X</li>
+				<li>Pretty row X</li>
+				<li>Pretty row X</li>
+				<li>Pretty row X</li>
+				<li>Pretty row X</li>
+				<li>Pretty row X</li>
+				<li>Pretty row X</li>
+				<li>Pretty row X</li>
+				<li>Pretty row X</li>
+				<li>Pretty row X</li>
+				<li>Pretty row X</li>
+				<li>Pretty row X</li>
+				<li>Pretty row X</li>
+				<li>Pretty row X</li>
+				<li>Pretty row X</li>
+				<li>Pretty row X</li>
+				<li>Pretty row X</li>
+				<li>Pretty row X</li>
+				<li>Pretty row X</li>
+				<li>Pretty row X</li>
+				<li>Pretty row X</li>
+				<li>Pretty row X</li>
+				<li>Pretty row X</li>
+				<li>Pretty row X</li>
+				<li>Pretty row X</li>
+				<li>Pretty row X</li>
+				<li>Pretty row X</li>
+				<li>Pretty row X</li>
+				<li>Pretty row X</li>
+				<li>Pretty row X</li>
+				<li>Pretty row X</li>
+				<li>Pretty row X</li>
+				<li>Pretty row X</li>
+				<li>Pretty row X</li>
+				<li>Pretty row X</li>
+				<li>Pretty row X</li>
+				<li>Pretty row X</li>
+				<li>Pretty row X</li>
+				<li>Pretty row X</li>
+				<li>Pretty row X</li>
+				<li>Pretty row X</li>
+				<li>Pretty row X</li>
+				<li>Pretty row X</li>
+				<li>Pretty row X</li>
+				<li>Pretty row X</li>
+			</ul>
+
+		</div>
+
+	</body>
+
+</html>

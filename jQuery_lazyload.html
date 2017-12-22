@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#div1{
+				width: 400px;
+				height: 400px;
+				overflow-y: scroll;
+				overflow-x: hidden;
+			}
+		</style>
+		<script src="jquery-3.2.1.min.js"></script>
+		<script src="jquery_lazyload/jquery.lazyload.min.js"></script>
+	</head>
+	<body>
+		<div id="div1">
+		<img class="lazy" data-original = "img/hm/hmprod_1.jpeg" style="opacity: 0.2;" />
+		<img class="lazy" data-original = "img/hm/hmprod_2.jpeg" />
+		<img class="lazy" data-original = "img/hm/hmprod_3.jpeg" />
+		<img class="lazy" data-original = "img/hm/hmprod_4.jpeg" />
+		<img class="lazy" data-original = "img/hm/hmprod_5.jpeg" />
+		<img class="lazy" data-original = "img/hm/hmprod_6.jpeg" />
+		<img class="lazy" data-original = "img/hm/hmprod_7.jpeg" />
+		<img class="lazy" data-original = "img/hm/hmprod_8.jpeg" />
+		<img class="lazy" data-original = "img/hm/hmprod_9.jpeg" />
+		</div>
+		<script>
+			$(function(){
+				$("img.lazy").lazyload({
+					effect:"fadeIn",
+					threshold:180,
+					event:"click",
+					container:$("#div1")
+				});
+			})
+		</script>
+	</body>
+</html>

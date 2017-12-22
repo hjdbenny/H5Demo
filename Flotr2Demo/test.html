@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/flotr2.min.js" type="text/javascript" charset="utf-8"></script>
+		<style>
+			#container{
+				width: 800px;
+				height: 600px;
+				margin: 20px auto;
+				/*background: lightgreen;*/
+			}
+		</style>
+	</head>
+	<body>
+		<div id="container"></div>
+		<script>
+			var container=document.getElementById("container");
+			var d1=[],
+				d2=[],
+				d3=[],
+				i;
+			for (i = 0; i < 40; i += 0.5) {  
+    			d1.push([i, Math.sin(i)+3*Math.cos(i)]);  
+    			d2.push([i, Math.pow(1.1, i)]);  
+    			d3.push([i, 40 - i+Math.random()*10]);  
+  			}  
+			
+			var options={
+				colors:['#00A8F0', '#C0D800', '#CB4B4B', '#4DA74D', '#9440ED'],  //线条的颜色 
+				title:"我是主标题",
+				subtitle:"我是副标题",
+				shadowSize:5,
+				defaultType:"lines",		//图表类型可选值：bars,bubbles,candles,lines,gantt,markers,pie,points,radar;
+				HtmlText:false,
+				fontSize:7.5,
+				fontColor:"purple",
+				selection : { mode : 'x', fps : 30 },
+				xaxis:{						//x轴设置
+					/*ticks:["0.0","1.0","2.0","3.0","4.0","5.0","6.0","7.0"],
+					showLabels:true,
+					labelsAngle:60,
+					title:"X",
+					titleAngle:0*/
+					max:"40",
+					min:"0"
+				},
+				yaxis:{
+					min:"-5", 
+					max:"50",
+					showLabels:true,                             // 是否显示Y轴刻度  
+               		showMinorLabels:false,
+               		tickDecimals:1
+				},
+				grid: {  
+                  	color: '#545454',      // => 表格外边框和标题以及所有刻度的颜色  
+                  	backgroundColor: null, // => 表格背景颜色  
+                  	backgroundImage: null, // => 表格背景图片  
+                  	watermarkAlpha: 0.4,   // => 水印透明度  
+                  	tickColor: '#DDDDDD',  // => 表格内部线条的颜色  
+                  	labelMargin: 1,        // => margin in pixels  
+                  	verticalLines: true,   // => 表格内部是否显示垂直线条  
+                  	minorVerticalLines: null, // => whether to show gridlines for minor ticks in vertical dir.  
+                  	horizontalLines: true, // => 表格内部是否显示水平线条  
+                  	minorHorizontalLines: null, // => whether to show gridlines for minor ticks in horizontal dir.  
+                  	outlineWidth: 1,       // => 表格外边框的粗细  
+                  	outline : 'nsew',      // => 超出显示范围后的显示方式  
+    				circular: false       // => 是否以环形的方式显示  
+          		},
+          		mouse:{  
+                  	track: true,          // => 为true时,当鼠标移动到每个折点时,会显示折点的坐标  
+                  	trackAll: true,       // => 为true时,当鼠标在线条上移动时,显示所在点的坐标  
+                  	position: 'se',        // => 鼠标事件显示数据的位置 (default south-east)  
+                  	relative: false,       // => 当为true时,鼠标移动时,即使不在线条上,也会显示相应点的数据  
+                  	trackFormatter: Flotr.defaultTrackFormatter, // => formats the values in the value box  
+                  	margin: 5,             // => margin in pixels of the valuebox  
+                  	lineColor: '#FF3F19',  // => 鼠标移动到线条上时,点的颜色  
+                  	trackDecimals: 0,      // => 数值小数点后的位数  
+                  	sensibility: 2,        // => 值越小,鼠标事件越精确  
+                  	trackY: true,          // => whether or not to track the mouse in the y axis  
+                  	radius: 3,             // => radius of the track point  
+                  	fillColor: null,       // => color to fill our select bar with only applies to bar and similar graphs (only bars for now)  
+                  	fillOpacity: 0.4       // => o  
+           		} 
+			}
+			Flotr.draw(container,[d1,d2,d3],options)
+		</script>
+	</body>
+</html>

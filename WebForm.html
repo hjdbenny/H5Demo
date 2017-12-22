@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			li{
+				line-height: 50px;
+			}
+		</style>
+		<script type="text/javascript" src="jquery-3.2.1.min.js" ></script>
+	</head>
+	<body>
+		<form method="post" action="WebForm.php">
+			<fieldset id="personal_information">
+				<legend>Project Information</legend>
+				<ol>
+					<li>
+						<label for="name">Name</label>
+						<input type="text" name="name" id="name" autofocus=""/>
+					</li>
+					<li>
+						<input type="submit" name="" id="" value="Submit" />
+					</li>
+					<li>
+						<label for="priority">Priority</label>
+						<input type="range" min="0" max="10" value="0" name="priority" id="priority" />
+					</li>
+					<li>
+						<label for="estimated_hours">Estimated Hours</label>
+						<input type="number" name="estimated" id="estimated" value="1" max="100" min="0" />
+					</li>
+					<li>
+						<label for="start_date">Start date</label>
+						<input type="date" name="start_date" id="start_date" value="2017-04-27" />
+					</li>
+					<li>
+						<label for="project_color">Project color</label>
+						<input type="color" name="project_color" id="project_color" value="" />
+					</li>
+				</ol>
+			</fieldset>
+		</form>
+		<p>aa</p>
+		<script>
+			$.fn.debug1=function(){
+					return this.each(function(){
+						alert(1);
+					})
+				}
+			$(function(){
+				$('p').debug1()
+			})
+		</script>
+	</body>
+</html>

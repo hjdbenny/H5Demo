@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="jquery-3.2.1.min.js" ></script>
+	</head>
+	<body>
+		<canvas id="logo" width="900" height="80">
+			<h1>AwesomeCo</h1>
+		</canvas>
+		<script>
+			$(function(){
+				var canvas=document.getElementById("logo")
+				if(canvas.getContext){
+					drawlogo();
+				}
+			})
+			var drawlogo=function(){
+				var canvas=document.getElementById("logo");
+				var ctx=canvas.getContext("2d");
+				ctx.font="italic 40px sans-serif";
+				ctx.textBaseline='top';
+				ctx.fillText("AwesomeCo",60,0)
+				
+				ctx.lineWidth=2;
+				ctx.beginPath();
+				ctx.moveTo(0,40);
+				ctx.lineTo(30,0);
+				ctx.lineTo(60,40);
+				ctx.lineTo(300,40);
+				ctx.stroke();
+				ctx.closePath();
+				
+				ctx.save();
+				ctx.translate(20,20);
+				ctx.fillRect(0,0,20,20);
+				
+				ctx.fillStyle="#fff";
+				ctx.strokeStyle="#fff";
+				ctx.lineWidth=2;
+				ctx.beginPath();
+				ctx.moveTo(0,20);
+				ctx.lineTo(10,0);
+				ctx.lineTo(20,20);
+				ctx.lineTo(0,20);
+				ctx.fill();
+				ctx.closePath();
+				ctx.restore();
+				
+//				ctx.fillStyle="#f00"
+//				ctx.strokeStyle="#f00"
+				var gradient=ctx.createLinearGradient(0,0,0,40);
+				gradient.addColorStop(0,'a00');
+				gradient.addColorStop(1,'f00')
+				ctx.fillStyle=gradient;
+				ctx.strokeStyle=gradient;
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="jquery-3.2.1.min.js" ></script>
+	</head>
+	<body>
+		<img src="" data-url = "img/hm/hmprod_1.jpeg" />
+		<img src="" data-url = "img/hm/hmprod_2.jpeg" />
+		<img src="" data-url = "img/hm/hmprod_3.jpeg" />
+		<img src="" data-url = "img/hm/hmprod_4.jpeg" />
+		<img src="" data-url = "img/hm/hmprod_5.jpeg" />
+		<img src="" data-url = "img/hm/hmprod_6.jpeg" />
+		<img src="" data-url = "img/hm/hmprod_7.jpeg" />
+		<img src="" data-url = "img/hm/hmprod_8.jpeg" />
+		<img src="" data-url = "img/hm/hmprod_9.jpeg" />
+	</body>
+	<!--原生方法--> 
+	<!--<script>	
+		var img=document.getElementsByTagName("img");
+		var num=document.getElementsByTagName("img").length;
+		var n=0;
+		lazyload();
+		window.onscroll=lazyload;
+		function lazyload(){
+			var seeHight=document.documentElement.clientHeight;
+			var scrollTop1=document.documentElement.scrollTop||document.body.scrollTop;
+			console.log(seeHight);
+			console.log(scrollTop1)
+			for (var i=n;i<num;i++) {
+				if(img[i].offsetTop<seeHight+scrollTop1){
+					if(img[i].getAttribute("src")==""){
+						img[i].src=img[i].dataset.url;
+					}
+					n=i+1;
+				}
+			}
+		}
+	</script>-->
+	<!--jQuery方法-->
+	<script>
+		var n=0;
+		var num=$("img").length;
+		var img=$("img");
+		function lazyload(){
+			var seeHeight=parseInt($(window).height());
+			var scrollTop1=parseInt($(window).scrollTop());
+			for (var i=n;i<num;i++) {
+				if(img.eq(i).offset().top<seeHeight+scrollTop1){
+					if(img.eq(i).attr("src")==""){
+						var src=img.eq(i)[0].dataset.url
+						img.eq(i).attr("src",src);
+						n=i+1;
+					}
+				}
+			}
+		}
+		lazyload();
+		$(window).scroll(lazyload())
+	</script>
+</html>

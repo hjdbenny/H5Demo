@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			table{
+				width: 600px;
+				border-collapse:collapse;
+			}
+			td,th{
+				border: none;
+			}
+			th{
+				background-color: #000;
+				color: #fff;
+			}
+			tr:nth-of-type(even){
+				background-color: #f3f3f3;
+			}
+			tr:nth-last-of-type(odd){
+				background-color: #ddd;
+			}
+			td:nth-child(n+2){
+				text-align: right;
+			}
+			tr:last-child,td:last-child{
+				font-weight: bolder;
+			}
+			tr:last-child td:last-child{
+				font-size: 24px;
+			}
+			tr:nth-last-child(2){
+				color: green;
+			}
+			tr:nth-last-child(-n+3) td{
+				text-align: right;
+			}
+		</style>
+	</head>
+	<body>
+		<table>
+			<tr>
+				<th>Item</th>
+				<th>Price</th>
+				<th>Quantity</th>
+				<th>Total</th>
+			</tr>
+			<tr>
+				<td>Coffee mug</td>
+				<td>$10.00</td>
+				<td>5</td>
+				<td>$50.00</td>
+			</tr>
+			<tr>
+				<td>Polo shirt</td>
+				<td>$20.00</td>
+				<td>5</td>
+				<td>$100.00</td>
+			</tr>
+			<tr>
+				<td>Red stapler</td>
+				<td>$9.00</td>
+				<td>4</td>
+				<td>$36.00</td>
+			</tr>
+			<tr>
+				<td colspan="3">Subtotal</td>
+				<td>$186.00</td>
+			</tr>
+			<tr>
+				<td colspan="3">Shipping</td>
+				<td>$12.00</td>
+			</tr>
+			<tr>
+				<td colspan="3">Total Due</td>
+				<td>$198.00</td>
+			</tr>
+		</table>
+	</body>
+</html>

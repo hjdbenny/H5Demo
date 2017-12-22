@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas id="can1" width="800" height="600"></canvas>
+		<script>
+			var canvas=document.getElementById("can1");
+			var ctx=canvas.getContext("2d");
+			nums=[268,231,455,1800,2300,1500,2000];
+			datas=["11.1","11.2","11.3","11.4","11.5","11.6","11.7"];
+			//画出坐标系
+			function drawBorder(){
+				ctx.beginPath();
+				ctx.moveTo(100,50);
+				ctx.lineTo(100,550);
+				ctx.moveTo(100,550)
+				ctx.lineTo(800,550);
+				ctx.closePath();
+				ctx.stroke();
+			}
+			//画出折线
+			function drawLine(){
+				for (i=0;i<nums.length-1;i++) {
+					//起始坐标
+					var x1=i*100+150
+					var y1=550-nums[i]/500*100;
+					//终点坐标
+					var x2=(i+1)*100+150
+					var y2=550-nums[i+1]/500*100
+					ctx.beginPath();
+					ctx.moveTo(x1,y1);
+					ctx.lineTo(x2,y2);
+					ctx.lineWidth=3
+					ctx.strokeStyle="orange"
+					ctx.closePath();
+					ctx.stroke();
+				}
+			}
+			//绘制折线点的菱形和数值，横纵坐标；
+			function drawBlock(){
+				for (i=0;i<nums.length;i++) {
+					var x=i*100+150;
+					var y=550-nums[i]/500*100;
+					//画出折线上的方块
+					ctx.beginPath()
+					ctx.moveTo(x-4,y);
+					ctx.lineTo(x,y-4);
+					ctx.lineTo(x+4,y);
+					ctx.lineTo(x,y+4);
+					ctx.fillStyle="orange";
+					ctx.fill();
+					//画出折线上的点值
+					ctx.font="15px scans-serif";
+					var text=ctx.measureText(nums[i]);
+					ctx.fillText(nums[i],x-text.width,y-10)
+					//画出纵坐标
+					var colText=ctx.measureText((nums.length-i)*500);
+					ctx.fillText((nums.length-i)*500,90-colText.width,i*100+55)
+					//画出横坐标
+					if(i<=nums.length-1){
+						var rowText=ctx.measureText(datas[i])
+						ctx.fillText(datas[i],x-rowText.width/2,580)
+					}else{
+						return;
+					}
+				}
+			}
+			drawBorder();
+			drawLine();
+			drawBlock();
+		</script>
+	</body>
+</html>

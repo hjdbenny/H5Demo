@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="myTest">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			input.ng-invalid{
+				background: red;
+			}
+		</style>
+		<script type="text/javascript" src="jquery-3.2.1.min.js" ></script>
+		<script type="text/javascript" src="angular.min.js" ></script>
+	</head>
+	<body ng-controller="Test">
+		<h1 ng-bind="i"></h1>
+		<ul>
+			<li ng-repeat="j in arr" ng-bind="j"></li>
+		</ul>
+		<h2 ng-bind="s"></h2>
+		<p>
+			Please input your name: <input type="text" ng-model="name" placeholder="name"/>
+			<h2>hello {{name}}</h2>
+		</p>
+		<p>
+			<form name="myForm">
+				Email:<input type="email" name="emails" ng-model="text" />
+				<span ng-show="myForm.emails.$error.email">不是一个合法的邮箱地址</span>
+				<h1>Statues:</h1>
+				{{myForm.emails.$valid}}
+				{{myForm.emails.$dirty}}
+			</form>
+		</p>
+		<script>
+			var app=angular.module("myTest",[]);
+			app.controller("Test",operation);
+			function operation($scope,$http){
+				$http.get("angluar_test.json").success(function(resp){
+					$scope.i=resp.sites[0].Name
+					$scope.arr=resp.sites;
+					for (var i =0 ;i<resp.sites.length;i++) {
+						$scope.arr[i]=resp.sites[i].Name;
+					}
+					$scope.s=$scope.arr[2]
+				})
+				
+			}
+		</script>
+	</body>
+</html>

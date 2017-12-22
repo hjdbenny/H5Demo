@@ -1,0 +1,32 @@
+[
+	{
+		"name":"诛仙",
+		"writer":"萧鼎",
+		"url":"books/诛仙.txt"
+	},
+	{
+		"name":"诛仙2",
+		"writer":"萧鼎",
+		"url":"books/诛仙2.txt"
+	},
+	{
+		"name":"诡案罪1",
+		"writer":"岳勇",
+		"url":"books/诡案罪1.txt"
+	},
+	{
+		"name":"诡案罪2",
+		"writer":"岳勇",
+		"url":"books/诡案罪2.txt"
+	},
+	{
+		"name":"诡案罪3",
+		"writer":"岳勇",
+		"url":"books/诡案罪3.txt"
+	},
+	{
+		"name":"诡案罪4",
+		"writer":"岳勇",
+		"url":"books/诡案罪4.txt"
+	}
+]
